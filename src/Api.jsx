@@ -60,7 +60,7 @@ import Useredit from "./Useredit";
 <Routes>
 <Route path="/" element = {<Userlist/>}></Route>
 <Route path="add" element = {<Useradd/>}></Route>
-<Route path="edit/:id" element = {<Useredit/>}></Route>
+<Route path= "/edit/:id" element = {<Useredit/>}></Route>
 </Routes>
  </div>        
    )           

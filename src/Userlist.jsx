@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
  function Userlist(){
  const[userdata,setuserdata] = useState([]); 
  const[loading,setloading] = useState(false);
- const navigate = useNavigate();
+const navigate = useNavigate();
  useEffect(()=>{
   getuserdata();
   setloading(true);
@@ -33,8 +33,8 @@ const deleteuserdata = async (id) => {
   console.log("Deleted user ID:", id);
 };
 //  for editing data we use this function
-const edituserdata = (id) =>{
-navigate("/edit/"+id);
+const edituserdata = (id)=>{
+  navigate("/edit/"+id)
 }
               
  return(
@@ -43,6 +43,7 @@ navigate("/edit/"+id);
 <ul className="flex justify-around border border-black m-1 p-1 font-bold">
   <li>First name</li>
   <li>last name</li>
+  <li>email</li>
   <li>age</li>
   <li>action</li>
 </ul>
@@ -54,6 +55,8 @@ userdata.map((user)=>(
   </li>
   <li key={user.name} className="text-xl font-light">{user.lastName}
   </li>
+  <li key={user.name} className="text-xl font-light">{user.email}
+  </li>
   <li key={user.name} className="text-xl font-light">{user.age}
   </li>
   <li>
@@ -61,11 +64,10 @@ userdata.map((user)=>(
     onClick={() => deleteuserdata(user.id)}>
       Delete
     </button>
-    <button className="bg-blue-500 text-white px-4 py-2 rounded"
-    onClick={()=>edituserdata(user.id)}
-    >
-      Edit
-    </button>
+   <button className="bg-blue-500 text-white px-2 py-2 rounded"
+   onClick={()=>edituserdata(user.id)}>
+   edit
+   </button>
   </li>
 </ul>
 ))
