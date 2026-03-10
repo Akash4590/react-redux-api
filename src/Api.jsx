@@ -43,6 +43,7 @@ import {Routes,Route,NavLink} from "react-router-dom";
 
 import Userlist from "./Userlist";
 import Useradd from "./Useradd";
+import Useredit from "./Useredit";
  function Api(){          
  return(
 <div>
@@ -59,6 +60,7 @@ import Useradd from "./Useradd";
 <Routes>
 <Route path="/" element = {<Userlist/>}></Route>
 <Route path="add" element = {<Useradd/>}></Route>
+<Route path="edit/:id" element = {<Useredit/>}></Route>
 </Routes>
  </div>        
    )           

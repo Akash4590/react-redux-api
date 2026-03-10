@@ -1,14 +1,16 @@
 
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
  function Userlist(){
  const[userdata,setuserdata] = useState([]); 
  const[loading,setloading] = useState(false);
+ const navigate = useNavigate();
  useEffect(()=>{
   getuserdata();
   setloading(true);
  },[]) 
+//  for getting data we use this function
 const getuserdata = async()=>{
   const url = "http://localhost:3000/users";
   let response  = await fetch(url);
@@ -17,6 +19,7 @@ const getuserdata = async()=>{
   // console.log(response);
   setloading(false);
 }
+//  for deleting data we use this function
 const deleteuserdata = async (id) => {
   const url = "http://localhost:3000/users";
   let response = await fetch(url + "/" + id, {
@@ -29,6 +32,10 @@ const deleteuserdata = async (id) => {
   }
   console.log("Deleted user ID:", id);
 };
+//  for editing data we use this function
+const edituserdata = (id) =>{
+navigate("/edit/"+id);
+}
               
  return(
 <div>
@@ -53,6 +60,11 @@ userdata.map((user)=>(
     <button className="bg-red-500 text-white px-4 py-2 rounded"
     onClick={() => deleteuserdata(user.id)}>
       Delete
+    </button>
+    <button className="bg-blue-500 text-white px-4 py-2 rounded"
+    onClick={()=>edituserdata(user.id)}
+    >
+      Edit
     </button>
   </li>
 </ul>
