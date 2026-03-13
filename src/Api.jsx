@@ -44,10 +44,11 @@ import {Routes,Route,NavLink} from "react-router-dom";
 import Userlist from "./Userlist";
 import Useradd from "./Useradd";
 import Useredit from "./Useredit";
+import Validation from "./Validation";
  function Api(){          
  return(
 <div>
-<ul className="flex w-[400px] justify-around list-none bg-gray-200 p-3 rounded-md">
+{/* <ul className="flex w-[400px] justify-around list-none bg-gray-200 p-3 rounded-md">
   <li>
     <NavLink to="/" className="text-lg font-semibold text-blue-600 hover:text-red-500">Home</NavLink>
   </li>
@@ -55,13 +56,15 @@ import Useredit from "./Useredit";
   <li>
     <NavLink to="/add" className="text-lg font-semibold text-blue-600 hover:text-red-500" > Add User</NavLink>
   </li>
-</ul>
-
+</ul> */}
+{/* 
 <Routes>
 <Route path="/" element = {<Userlist/>}></Route>
 <Route path="add" element = {<Useradd/>}></Route>
 <Route path= "/edit/:id" element = {<Useredit/>}></Route>
-</Routes>
+</Routes> */}
+
+<Validation/>
  </div>        
    )           
  }
