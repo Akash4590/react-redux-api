@@ -45,10 +45,11 @@ import Userlist from "./Userlist";
 import Useradd from "./Useradd";
 import Useredit from "./Useredit";
 import Validation from "./Validation";
-import { lazy, Suspense, useState } from "react";
-const Lazyloading = lazy(() => import("./Lazyloading"));
- function Api(){  
-  const [load,setload] = useState(false);        
+import {Lazyloading} from "./Lazyloading";
+// import { lazy, Suspense, useState } from "react";
+// const Lazyloading = lazy(() => import("./Lazyloading"));
+  function Api(){  
+//   const [load,setload] = useState(false);        
  return(
 <div>
 {/* <ul className="flex w-[400px] justify-around list-none bg-gray-200 p-3 rounded-md">
@@ -69,6 +70,7 @@ const Lazyloading = lazy(() => import("./Lazyloading"));
 
 {/* <Validation/> */}
 <Lazyloading />
+{/* <Lazyloading />
   {load ? 
       <Suspense fallback={<h3>Loading...</h3>}>
    <Lazyloading />
@@ -79,7 +81,7 @@ const Lazyloading = lazy(() => import("./Lazyloading"));
         onClick={() => setload(true)}
         className="bg-gray-500 text-white px-4 py-4">
         Load component
-      </button>
+      </button> */}
  </div>        
    )           
  }
