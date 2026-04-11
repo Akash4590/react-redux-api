@@ -45,7 +45,7 @@ import Userlist from "./Userlist";
 import Useradd from "./Useradd";
 import Useredit from "./Useredit";
 import Validation from "./Validation";
-import {Lazyloading} from "./Lazyloading";
+// import {Lazyloading} from "./Lazyloading";
 // import { lazy, Suspense, useState } from "react";
 // const Lazyloading = lazy(() => import("./Lazyloading"));
   function Api(){  
@@ -69,7 +69,7 @@ import {Lazyloading} from "./Lazyloading";
 </Routes> */}
 
 {/* <Validation/> */}
-<Lazyloading />
+{/* <Lazyloading /> */}
 {/* <Lazyloading />
   {load ? 
       <Suspense fallback={<h3>Loading...</h3>}>

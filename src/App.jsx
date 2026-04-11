@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import Api from './Api';
+import Header from "./Header";
 
+import Product from "./Product";
+import CartList from "./CartList";
+import { Routes, Route } from "react-router-dom";
+// import store from "./redux/Store";
 
 
 function App() {
@@ -44,7 +49,15 @@ function App() {
     </table>
   </div>
 </div> */}
-<Api/>
+{/* <Api/> */}
+ <Routes>
+        <Route path="/" element={<Product />} />
+        <Route path="/cart" element={<CartList/>} />
+      </Routes>
+<Header/>
+
+{/* <Store /> */}
+
     </>
   )
 }
